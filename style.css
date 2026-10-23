@@ -1,0 +1,127 @@
+/* Multinomial Technologies – ortak site stili (GitHub Pages). */
+:root {
+  --bg: #f7f3ec;
+  --card: #ffffff;
+  --ink: #1d2140;
+  --muted: #5b5f78;
+  --accent: #f2661a;
+  --line: #e6dfd3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); }
+
+.top {
+  background: var(--ink);
+  color: #fff;
+}
+
+.top .wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.top a.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.top img {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+}
+
+.top .name {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.top .tech {
+  display: block;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+main.wrap {
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+
+h1 { font-size: 30px; line-height: 1.2; margin: 8px 0 16px; }
+h2 { font-size: 21px; margin: 32px 0 8px; }
+h3 { font-size: 17px; margin: 24px 0 4px; }
+
+.game {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.game img {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  flex: none;
+}
+
+.game h2 { margin: 0 0 4px; }
+.game p { margin: 0 0 8px; }
+.game .tr { color: var(--muted); }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.back { font-weight: 700; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 48px 0;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+footer .wrap { padding-top: 20px; padding-bottom: 28px; }
+
+@media (max-width: 520px) {
+  .game { flex-direction: column; }
+  h1 { font-size: 26px; }
+}
