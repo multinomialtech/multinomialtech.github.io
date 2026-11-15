@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tumblox: Block Puzzle</title>
+<meta name="description" content="A relaxing block puzzle: blocks fall, the board turns. Free on Google Play and the App Store.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tumblox: Block Puzzle">
+<meta property="og:description" content="Blocks fall, the board turns. Free on Google Play and the App Store.">
+<meta property="og:url" content="https://multinomialtech.github.io/tumblox/">
+<meta property="og:image" content="https://multinomialtech.github.io/images/tumblox-share.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../images/tumblox-icon.png">
+<link rel="apple-touch-icon" href="../images/tumblox-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1d2140; --accent: #f2661a; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 32px 16px; text-align: center; color: #fff;
+    font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: linear-gradient(160deg, #6c4cf0 0%, #3d2a9e 55%, #1d2140 100%);
+  }
+  main { max-width: 420px; width: 100%; }
+  .icon { width: 132px; height: 132px; border-radius: 30px; box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+  h1 { font-size: 30px; font-weight: 800; margin: 22px 0 4px; line-height: 1.15; }
+  .tag { font-size: 18px; opacity: .85; margin: 0 0 28px; font-weight: 700; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin: 12px auto; padding: 15px 20px; max-width: 300px; border-radius: 16px;
+    background: #fff; color: var(--ink); text-decoration: none; font-weight: 800; font-size: 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,.25);
+  }
+  .btn svg { width: 24px; height: 24px; flex: none; }
+  .note { font-size: 14px; opacity: .7; margin-top: 26px; }
+  .note a { color: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../images/tumblox-icon.png" alt="Tumblox app icon">
+  <h1 id="title">Tumblox: Block Puzzle</h1>
+  <p class="tag" id="tag">Blocks fall, the board turns.</p>
+  <a class="btn" id="ios" href="https://apps.apple.com/app/id6826613364">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>
+    <span>App Store</span>
+  </a>
+  <a class="btn" id="android" href="https://play.google.com/store/apps/details?id=com.tumblox.game">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00a173" d="M3.6 2.3 13.4 12l-9.8 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1z"/><path fill="#ffb900" d="m16.8 15.4-3.4-3.4 3.4-3.4 3.8 2.2c1.1.6 1.1 1.8 0 2.4z"/><path fill="#ef3e4a" d="M16.8 15.4 13.4 12l-9.8 9.7c.4.2.9.2 1.4-.1z"/><path fill="#00b3ec" d="M16.8 8.6 5 1.9c-.5-.3-1-.3-1.4-.1l9.8 9.7z"/></svg>
+    <span>Google Play</span>
+  </a>
+  <p class="note" id="note">Free · plays offline · <a href="privacy.html">Privacy</a></p>
+</main>
+<script>
+  (function () {
+    var tr = /^tr\b/i.test(navigator.language || '');
+    if (tr) {
+      document.documentElement.lang = 'tr';
+      document.title = 'Tumblox: Blok Bulmaca';
+      document.getElementById('title').textContent = 'Tumblox: Blok Bulmaca';
+      document.getElementById('tag').textContent = 'Bloklar düşer, tahta döner.';
+      document.getElementById('note').innerHTML = 'Ücretsiz · internetsiz oynanır · <a href="privacy.html">Gizlilik</a>';
+    }
+    // Telefondan açılınca doğrudan kendi mağazasına gider; bilgisayarda iki
+    // düğme de görünür.
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/i.test(ua) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var android = /Android/i.test(ua);
+    if (ios) location.replace(document.getElementById('ios').href);
+    else if (android) location.replace(document.getElementById('android').href);
+  })();
+</script>
+</body>
+</html>
